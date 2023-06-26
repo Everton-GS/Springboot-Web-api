@@ -1,6 +1,7 @@
 package com.example.Projectwebapi.entitys;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,7 +19,9 @@ public class Users {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
+    @Column(columnDefinition = "login")
     private String login;
+    @Column(columnDefinition = "senha")
     private String senha;
-
+    
 }
