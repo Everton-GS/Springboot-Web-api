@@ -12,16 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.Projectwebapi.entitys.Users;
 import com.example.Projectwebapi.repositories.RespositoryUsers;
 
+
 @RestController
 @RequestMapping(value = "/")
-public class ControllersUsers {
+public class Userscontrollers {
+  
+  @Autowired
+  RespositoryUsers respositoryUsers;
 
-    @Autowired
-    Users users;
-    @Autowired
-    RespositoryUsers respositoryUsers;
-
-   @PostMapping
+   @PostMapping("cadastrar")
    public Users cadastrar(@RequestBody Users users){
     return respositoryUsers.save(users);
    }
