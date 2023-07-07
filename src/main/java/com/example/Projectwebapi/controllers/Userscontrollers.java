@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Projectwebapi.entitys.Users;
-import com.example.Projectwebapi.repositories.RespositoryUsers;
+import com.example.Projectwebapi.repositories.UsersRespository;
 
 
 @RestController
@@ -20,7 +20,7 @@ import com.example.Projectwebapi.repositories.RespositoryUsers;
 public class Userscontrollers {
   
   @Autowired
-  RespositoryUsers respositoryUsers;
+  UsersRespository usersrespository;
 
   @Autowired
   PasswordEncoder encoder;
@@ -28,12 +28,12 @@ public class Userscontrollers {
    @PostMapping("cadastrar")
    public Users cadastrar(@RequestBody Users users){
     users.setSenha(encoder.encode(users.getSenha()));
-    return respositoryUsers.save(users);
+    return usersrespository.save(users);
    }
 
     @GetMapping
     public List<Users>listar(){
-        return respositoryUsers.findAll();
+        return usersrespository.findAll();
         
     }
     
