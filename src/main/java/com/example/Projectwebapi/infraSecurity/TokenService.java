@@ -1,4 +1,4 @@
-package com.example.Projectwebapi.infraSecurety;
+package com.example.Projectwebapi.infraSecurity;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -15,7 +15,7 @@ import com.example.Projectwebapi.entitys.Users;
 
 @Service
 public class TokenService {
-    
+     
     @Value("${api.security.token.secret}")
     private String secret;
 
@@ -49,4 +49,5 @@ public class TokenService {
     private Instant genExpirationDate(){
         return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
     }
+    
 }
