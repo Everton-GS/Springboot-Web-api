@@ -1,18 +1,22 @@
 spring:
-    datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        username: root
-        password: bp1234
-        url: jdbc:mysql://localhost:3306/cliente_db
-        api.security.token.secret=${JWT_SECRET:my-secret-key}:
-    jpa:
-        hibernate:
-            ddl-auto: update
-        show-sql: 'true'
- 
+  mvc:
+    view:
+      prefix: classpath:/templates/
+      suffix: .html
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: bp1234
+    url: jdbc:mysql://localhost:3306/cliente_db
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
 api:
   security:
     token:
       secret: ${JWT_SECRET:my-secret-key}
 
-        
